@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var str = "heLLO world"; //子串
+			str = str + "234234"; //heLLO world234234
+
+			// //1,取得长度
+			// console.log(str.length); //17
+
+			// //2,利用索引访问单个字符
+			// console.log(str[0]); //h
+			// console.log(str[1]); //e
+			// console.log(str[2]); //L
+			// //str[5]="-";//可以获取对应的字符，但是不能修改
+			// console.log(str); //heLLO world234234
+
+			// //for 循环遍历字符串每个字符
+			// // 0 1 2 3 4 5   str.length-1
+			// for (var i = 0; i < str.length; i++) {
+			// 	console.log(str[i]); //h e L L O 空格 w o r l d 2 3 4 2 3 4
+			// }
+
+			// //toUpperCase - 小写字母变大写字母
+			// var str2 = str.toUpperCase(); //对原有字符串没有影响，新字符串返回
+			// console.log(str); // heLLO world234234 - 原有字符串没有发生变化
+			// console.log(str2); // HELLO WORLD234234
+
+			// //toLowerCase - 大写字母变小写字母
+			// var str3 = str.toLowerCase();
+			// console.log(str); //heLLO world234234
+			// console.log(str3); //hello world234234
+
+			//查找
+			// var index1 = str.indexOf("world"); //如果子串存在，返回子串首字母索引，如果子串不存在 返回-1
+			// console.log(index1);//6
+			// var index2 = str.indexOf("worlD"); 
+			// console.log(index2);//-1
+			// var index3 = str.indexOf("");//空字符串
+			// console.log(index3);//0
+			// var index4 = str.indexOf("world",4);//4 - 代表从第四个字符开始寻找
+			// console.log(index4);//6
+
+			//拼接
+			// var str2 = str + "baidu.com";
+			// console.log(str2);//heLLO world234234baiedu.com
+
+			// var str3 = str.concat("baidu.com", "!");
+			// console.log(str3);//heLLO world234234baiedu.com!
+
+			//截取
+			// var str = "heLLO,world,javascript,js"; //子串
+			// var str2 = str.slice(2, 5);//LLO - 第二个开始，最后一个不包括
+			// var str3 = str.slice(2);//第二个一个到最后的字符
+			// var str4 = str.slice(5, 3);//没有反着来的
+			// var str5 = str.slice(2, 40);//可以截取的范围超出字符串长度
+			// var str6 = str.slice(-4, -2);//可以传递负数，从后面开始数
+			// console.log(str2);//LLO
+			// console.log(str3);//LLO,world,javascript,js
+			// console.log(str4); //""
+			// console.log(str5);//LLO,world,javascript,js
+			// console.log(str6);//t,
+
+			// //第二种截取
+			// var str = "heLLO,world,javascript,js"; //子串
+
+			// var str2 = str.substring(2, 5);
+			// var str3 = str.substring(2);
+			// var str4 = str.substring(5, 2);
+			// var str5 = str.substring(-4, -2); //str.substring(0,0)
+			// console.log(str2); //LLO
+			// console.log(str3); //LLO,world,javascript,js
+			// console.log(str4); //LLO
+			// console.log(str5); //""
+
+			// //第三种截取
+			// var str2 = str.substr(2, 3); //第二个开始,截取三个
+			// var str3 = str.substr(2); //第二个开始,截取后面全部
+			// console.log(str2); //LLO
+			// console.log(str3); //LLO,world,javascript,js
+
+			//分割
+			var str1 = "heLLO,world,javascript,js"; //子串
+			var arr11 = str1.split(",");//按照逗号进行拆分
+			console.log(arr11);//['heLLO', 'world', 'javascript', 'js']
+			
+			var str2 = "heLLO--world--javascript--js"; //子串
+			var arr22 = str2.split("--");//按照 -- 进行拆分
+			console.log(arr22);//['heLLO', 'world', 'javascript', 'js']
+			
+			var str3 = "heLLO,world,javascript,js"; //子串
+			var arr33 = str3.split(",",3);//按照逗号进行拆分,并且只截取拆分后的前三个字符串
+			console.log(arr33);//['heLLO', 'world', 'javascript']
+
+//
+			var username = "  baidu com ";//前后空格去掉,中间不去掉
+			var newStr = username.trim();
+			console.log(username);//  baidu com 
+			console.log(newStr);//baidu com
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

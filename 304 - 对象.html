@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// //创建对象
+			// //key value 键值对
+			// user1 = {
+			// 	name: "siki",
+			// 	age: 80,
+			// 	sex: "男"
+			// };
+			// console.log(user1.name); //siki
+			// console.log(user1.age); //80
+			// console.log(user1.sex); //男
+
+			// //创建对象的另一种方式
+			// var user1 = new Object();
+			// user1.name = "sikiedu";
+			// user1.age = 20;
+			// user1.sex = "男";
+			// console.log(user1.name);//sikiedu
+			// console.log(user1.age);//20
+			// console.log(user1.sex);//男
+
+			// user1.name = "小明";
+			// console.log(user1.name);
+
+			////创建多个对象 - 一个一个创建麻烦 - 可以使用构造函数来创建对象
+			// user1 = {
+			// 	name: "siki",
+			// 	age: 80,
+			// 	sex: "男"
+			// };
+			// user2 = {
+			// 	name: "蓝猫",
+			// 	age: 10,
+			// 	sex: "女";
+			// };
+
+			// //构造函数
+			// function user(name, age, sex) {
+			// 	this.name = name;
+			// 	this.age = age;
+			// 	this.sex = sex;
+			// }
+			// //创建两个对象 - 简洁
+			// user3 = new user("小红", 20, "女");
+			// user4 = new user("李白", 40, "男");
+			// console.log(user3.name);//小红
+			// console.log(user3.age);//20
+			// console.log(user3.sex);//女
+
+			//给对象添加普通函数和对象属性的遍历
+			function user(name, age, sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+
+				// function show() {
+				// 	console.log(this.name + ":" + this.age + ":" + this.sex);
+				// }
+				//报错 - 定义函数而已，并没有赋值给这个对象
+
+				//解决1：
+				//this.show = show();//给对象添加一个show的属性
+				// function show() {
+				// 	console.log(this.name + ":" + this.age + ":" + this.sex);
+				// }
+
+				//解决2：this.show 调用匿名函数
+				this.show = function() {
+					console.log(this.name + ":" + this.age + ":" + this.sex);
+				}
+
+				this.setAge = function(age) { //定义更改年龄的函数
+					this.age = age;
+				}
+			}
+			user3 = new user("小红", 20, "女");
+			user4 = new user("李白", 40, "男");
+			// console.log(user3.name);//小红
+			// console.log(user3.age);//20
+			// console.log(user3.sex);//女
+			user3.show(); //小红:20:女
+			user4.show(); //李白:40:男
+			user4.setAge(18);
+			user4.show(); //李白:18:男
+
+			//对象属性的遍历
+			//访问user3的name的值（两种方式）
+			// console.log(user3.name);
+			// console.log(user3["name"]);
+
+			for (key in user3) {
+				console.log(key + ":" + user3[key]);
+			}
+			/* 遍历结果：
+				name:小红
+				age:20
+				sex:女
+				show:function() {
+									console.log(this.name + ":" + this.age + ":" + this.sex);
+								}
+				setAge:function(age) { //定义更改年龄的函数
+									this.age = age;
+								}
+			*/
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

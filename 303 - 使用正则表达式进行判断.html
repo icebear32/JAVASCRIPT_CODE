@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// var p1 = /^a/;//以 a 开头的字符串
+			// console.log(p1.test("abc"));//true
+			// console.log(p1.test("bc"));//false
+			// console.log(p1.test("bac"));//false
+
+			// var p2 = /a$/;//以 a 结尾的字符串
+			// console.log(p2.test("abca"));//true
+			// console.log(p2.test("abc"));//false
+
+			// var p3 = /^a$/;
+			// console.log(p3.test("a"));//true
+			// console.log(p3.test("aaa"));//false - 因为它是判断为一个字符 a，需要加限制才可以
+
+			// //中括号中括号
+			// var p4 = /[1234]/;
+			// console.log(p4.test("1"));//true
+			// console.log(p4.test("2"));//true
+			// console.log(p4.test("3"));//true
+			// console.log(p4.test("4"));//true
+			// console.log(p4.test("5"));//false - 没有5
+			// console.log(p4.test("11"));//true
+			// console.log(p4.test("51"));//true - 有1判断为真
+
+			// var p4 = /^[1234]$/;//认定以括号里的一个字符为首为尾
+			// console.log(p4.test("1"));//true
+			// console.log(p4.test("11"));//false - 不能有两个字符
+
+			// //想要两个字符首尾
+			// var p4 = /^[1234][1234]$/;
+			// console.log(p4.test("11"));//true
+			// console.log(p4.test("111"));//false
+
+			// //另一种方式
+			// var p4 = /[1-4]/;
+			// console.log(p4.test("a"));//false
+			// console.log(p4.test("b"));//false
+			// console.log(p4.test("3"));//true
+			// console.log(p4.test("4"));//true
+			// console.log(p4.test("5"));//false
+
+			// var p4 = /[a-z]/;
+			// console.log(p4.test("a"));//true
+			// console.log(p4.test("b"));//true
+			// console.log(p4.test("3"));//false
+			// console.log(p4.test("4"));//false
+			// console.log(p4.test("5"));//false
+
+			// var p5 = /\d/;// \d 相当于[0-9]
+			// console.log(p5.test("1"));//true
+			// console.log(p5.test("3"));//true
+			// console.log(p5.test("0"));//true
+			// console.log(p5.test("a"));//false
+
+			// //正整数
+			// // 1-9 0-9
+			// var p6 = /^[1-9]\d*$/; //首位是 1-9，尾位是 0-9，且 * 号表示首位后面可以有多位数字
+			// console.log(p6.test("0")); //false
+			// console.log(p6.test("5")); //true
+			// console.log(p6.test("21")); //true
+			// console.log(p6.test("430")); //true
+			// console.log(p6.test("-430")); //false
+
+			// * +量词
+			// * 号表示前面的字符有零个或多个
+			// var p7 = /^a*/;
+			// console.log(p7.test("a"));//true
+			// console.log(p7.test(""));//true
+			// console.log(p7.test("aa"));//true
+			// console.log(p7.test("aaa"));//true
+			// console.log(p7.test("b"));//true
+			
+			// + 号表示前面的字符至少要有一个
+			// var p7 = /^a+/;
+			// console.log(p7.test("a"));//true
+			// console.log(p7.test(""));//false
+			// console.log(p7.test("aa"));//true
+			// console.log(p7.test("aaa"));//true
+			// console.log(p7.test("b"));//false
+
+			// var p8 = /^[1-9][0-9]+$/;
+			// console.log(p8.test("10"));
+			// console.log(p8.test("804632564"));
+			// console.log(p8.test("0"));
+			// console.log(p8.test("089"));
+			// console.log(p8.test("100"));
+
+			//使用正则表达式来判断邮箱 xxx@xx.com  xx.org xx.net
+			var p9 = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+			console.log(p9.test("xxx@qq.com"));//true
+			console.log(p9.test("xxx@qq.net")); //true
+			console.log(p9.test("xxx@qq.cn"));//true
+			console.log(p9.test("@qq.cn"));//false
+			console.log(p9.test("123@baidu.com"));//true
+			console.log(p9.test("&123@baidu.xcvxcvds"));//false
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
