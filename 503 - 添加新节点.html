@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="mydiv">
+			<span>第一个span</span>
+			<span>第二个span</span>
+			<span>第三个span</span>
+			<span>第四个span</span>
+			<p id="myp">我是p标签</p>
+
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	// //通过 innerHTML 给标签添加子标签
+	// myp = document.getElementById("myp");
+	// myp.innerHTML = "<span>第五个span</span>";
+
+	// //缺点：把已有的标签给覆盖掉
+	// mydiv = document.getElementById("mydiv");
+	// mydiv.removeChild(myp);
+	// mydiv.innerHTML = "<span>第六个span</span>";
+
+	//不影响其他标签
+	var newSpan = document.createElement("span"); // <span></span> - 只是创建出来，本没有放入文本里面，而且span标签里面没有内容
+	// mydiv.appendChild(newSpan);
+	newSpan.innerText = "我是第五个span"; //添加内容
+	mydiv.appendChild(newSpan); //一定要的，把span标签放到文本里面
+
+	//另一种方式 - 创建一个文本节点
+	var newSpan = document.createElement("span");
+	var textNode = document.createTextNode("我是第六个span");
+	newSpan.appendChild(textNode);
+	mydiv.appendChild(newSpan);
+</script>
