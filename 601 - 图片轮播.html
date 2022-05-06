@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 900px;
+				height: 400px;
+				margin: 0 auto;
+			}
+
+			div img {
+				width: 900px;
+				height: 400px;
+			}
+		</style>
+		<script type="text/javascript">
+			//防止文本还没加载完就直接调用函数，可能导致需要的文本参数没加载导致错误
+			function init() {
+				//缺点:只待用一次
+				// window.setTimeout(changeImg, 2000); //两秒后开始调用，以此来调整图片轮换速度
+				window.setInterval(changeImg, 2000); //每两秒调用一次函数
+			}
+
+			// //写死了，不会轮换
+			// function changeImg() {
+			// 	myimg = document.getElementById("myimg");
+			// 	myimg.src = "img/2.jpg" //更换图片
+			// }
+
+			var index = 1;
+
+			// function changeImg() {
+			// 	myimg = document.getElementById("myimg");
+			// 	index++;
+			// 	if (index > 2) {
+			// 		index = 1;
+			// 	}
+			// 	myimg.src = "img/" + index + ".jpg"; //更换图片
+			// }
+
+			function changeImg() {
+				nextImg();
+			}
+
+			function preImg() {
+				myimg = document.getElementById("myimg");
+				index--;
+				if (index < 1) {
+					index = 2;
+				}
+				myimg.src = "img/" + index + ".jpg";
+			}
+
+			function nextImg() {
+				myimg = document.getElementById("myimg");
+				index++;
+				if (index > 2) {
+					index = 1;
+				}
+				myimg.src = "img/" + index + ".jpg";
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<p align="center">
+			<button onclick="preImg()">上一张</button>
+			<button onclick="nextImg()">下一张</button>
+		</p>
+		<div>
+			<img src="img/1.jpg" id="myimg" />
+		</div>
+	</body>
+</html>

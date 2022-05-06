@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#ad {
+				width: 300px;
+				height: 300px;
+				background-color: antiquewhite;
+				position: fixed;
+				bottom: 0px;
+				right: 0px;
+				display: none;//none 使得弹窗没有显示
+			}
+		</style>
+		<script type="text/javascript">
+			function init() {
+				// setTimeout(showAd, 5000); //设置初始化网页后五秒调用弹窗函数
+				setInterval(showAd, 5000);//设置初始化网页后每隔五秒调用一次弹窗函数
+			}
+
+			function showAd() {
+				var ad = document.getElementById("ad");
+				ad.style.display = "block";//block 使得弹窗显示
+			}
+
+			function closeAd() {
+				var ad = document.getElementById("ad");
+				ad.style.display = "none";
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<!-- 换行为了查看滑动是否影响弹窗的位置 -->
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<div id="ad">
+			<button onclick="closeAd()">关闭</button><!-- 弹窗的关闭按钮 -->
+		</div>
+	</body>
+</html>
