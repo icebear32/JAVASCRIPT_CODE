@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//window浏览器窗口
+			// var name = "baidu";
+			// console.log(window.name); //baidu
+
+			// window.document.getElementById()
+			// document.getElementById()//简写
+
+			// window	窗口
+			// document	网页
+
+			// 之前的调用
+			// window.alert();//弹出框
+			// window.setInterval	//设置时间间隔调用函数
+			// window.setTimeout	//设置多长时间调用函数
+
+			// var res = window.confirm("你确定要点击我吗？");//确定框
+			// console.log(res);//确定得到 true ；取消得到 false
+
+			// var res = window.prompt("请输入你的性别：");
+			// console.log(res);
+
+			// function myopen() {
+			// 	// open() 方法用于打开一个新的浏览器窗口或查找一个已命名的窗口。
+			// 	//参数	URL	声明了要在新窗口中显示的文档的 URL
+			// 	//name	该字符声明了新窗口的名称
+			// 	//features	声明了新窗口要显示的标准浏览器的特征
+			// 	//replace	true - URL 替换浏览历史中的当前条目。	false - URL 在浏览历史中创建新的条目。
+			// 	var w = window.open("https://www.baidu.com", "new_window", "width=500,height=500");
+
+			// 	//设置窗口的大小、位置
+			// 	w.resizeTo(400, 400);//修改大小
+			// 	w.moveTo(500, 500);//移动位置
+
+			// 	//w.close();//关闭网页窗口
+
+			// 	w.focus();//获取焦点
+			// }
+
+			// // screen( window.screen ) 获取屏幕分辨率
+			// console.log(screen.availWidth);//可用的屏幕宽度
+			// console.log(screen.availHeight);//可用的屏幕高度
+
+			console.log(location.protocol); //返回所使用的 web 协议（http:// 或 https://）
+			console.log(location.hostname); //返回 web 主机的域名
+			console.log(location.port); //返回 web 主机的端口 （80 或 443）
+			console.log(location.pathname); //返回当前页面的路径和文件名
+			console.log(location); //对象用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面。
+
+			// window.location.assign("https://www.baidu.com");  //相当于一个超链接的功能
+			//location.assign("604 - 广告弹窗.html"); //从当前网址跳转到另一个网址
+		</script>
+	</head>
+	<body>
+		<button onclick="myopen()">打开</button>
+	</body>
+</html>
